@@ -888,6 +888,20 @@
         border-color: rgba(245, 130, 32, 0.5);
         background: linear-gradient(180deg, #fff 0%, var(--orange-tint) 100%);
       }
+      .package--essential {
+        border-color: rgba(21, 55, 94, 0.5);
+        background: linear-gradient(
+          180deg,
+          #fff 0%,
+          rgba(21, 55, 94, 0.04) 100%
+        );
+      }
+      .package__status--essential {
+        color: var(--navy-deep);
+      }
+      .package__status--essential::before {
+        background: var(--navy);
+      }
       .package__row {
         display: flex;
         align-items: center;
@@ -1786,10 +1800,12 @@
               <div class="step__meta">
                 <span class="step__tag step__tag--ai">AI-powered</span>
               </div>
-              <h2 class="step__title">Adding reports from more countries</h2>
+              <h2 class="step__title">
+                Handling more report types from the same sources
+              </h2>
               <p class="step__summary">
-                Pointing the same AI pipeline at further maritime authorities to
-                build a multi-national corpus.
+                Going beyond the initial MAIB corpus to include investigation
+                reports - depth over breadth.
               </p>
             </div>
             <span class="step__chev" aria-hidden="true">
@@ -1809,20 +1825,26 @@
             <div class="step__body-inner">
               <div class="step__detail">
                 <p>
-                  With the AI ingestion approach proven on a second country,
-                  adding more becomes an incremental task. Each new authority
-                  broadens the corpus and the comparisons it can support.
-                  Candidates include the Australian Transport Safety Bureau, the
-                  Dutch Safety Board, the Transportation Safety Board of Canada,
-                  and others — agreed in conversation with CHIRP Maritime.
+                  MAIB and CHIRP publish more than just full investigation
+                  reports. There are short safety bulletins, annual digests,
+                  sector-specific briefings, and CHIRP's own confidential
+                  incident reports. Each format carries a different shape of
+                  information, but they all cover the same underlying incidents
+                  and themes.
+                </p>
+                <p>
+                  More report types from familiar English-language sources gives
+                  a richer picture than adding more countries with their own
+                  conventions. Depth over breadth.
                 </p>
               </div>
               <div class="step__ai-role">
                 <span class="step__ai-role-label">AI's role</span>
                 <span class="step__ai-role-text"
-                  >The same AI ingestion pipeline reads each new authority's
-                  reports. The reports are still verified by humans before
-                  they're added to the corpus.</span
+                  >The same ingestion pipeline reads the new document types.
+                  Where a format has its own conventions, the model is adapted
+                  with format-specific prompts. Human reviewers verify the
+                  output in Step 6.</span
                 >
               </div>
             </div>
@@ -1832,63 +1854,6 @@
 
       <article class="step step--ai" data-step="12" data-kind="ai">
         <div class="step__node">12</div>
-        <div class="step__card">
-          <button class="step__header" aria-expanded="false">
-            <div class="step__title-block">
-              <div class="step__meta">
-                <span class="step__tag step__tag--ai">AI-powered</span>
-              </div>
-              <h2 class="step__title">
-                Recognising the same place or organisation across borders
-              </h2>
-              <p class="step__summary">
-                AI reconciles different names, spellings, and abbreviations into
-                shared references.
-              </p>
-            </div>
-            <span class="step__chev" aria-hidden="true">
-              <svg
-                viewBox="0 0 16 16"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2.2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 6l4 4 4-4" />
-              </svg>
-            </span>
-          </button>
-          <div class="step__body">
-            <div class="step__body-inner">
-              <div class="step__detail">
-                <p>
-                  Different countries' reports use different names, spellings,
-                  and abbreviations for the same vessels, ports, and
-                  organisations. "Port of Rotterdam", "Rotterdamsche Haven", and
-                  "PoR" should all resolve to the same place.
-                </p>
-                <p>
-                  The AI proposes matches, and a human approves them before
-                  they're treated as the same entity. This is where
-                  cross-country comparisons stop being approximate.
-                </p>
-              </div>
-              <div class="step__ai-role">
-                <span class="step__ai-role-label">AI's role</span>
-                <span class="step__ai-role-text"
-                  >AI suggests likely matches between entities across reports. A
-                  reviewer in the verification tool (Step 6) accepts, rejects,
-                  or modifies each suggestion. No silent merges.</span
-                >
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-
-      <article class="step step--ai" data-step="13" data-kind="ai">
-        <div class="step__node">13</div>
         <div class="step__card">
           <button class="step__header" aria-expanded="false">
             <div class="step__title-block">
@@ -1920,11 +1885,12 @@
             <div class="step__body-inner">
               <div class="step__detail">
                 <p>
-                  Each jurisdiction operates under its own regulations. Linking
-                  reports to the specific laws and codes they relate to makes
-                  the corpus useful for regulatory analysis, advocacy, and
-                  policy work — letting researchers and CHIRP staff see what
-                  regulatory landscape each incident sits in.
+                  Maritime safety operates under a stack of regulations — the
+                  Merchant Shipping Act, MARPOL, COLREGs, MCA codes, and many
+                  more. Linking each report to the specific laws and codes it
+                  relates to makes the corpus useful for regulatory analysis,
+                  advocacy, and policy work — letting researchers and CHIRP
+                  staff see what regulatory landscape each incident sits in.
                 </p>
               </div>
               <div class="step__ai-role">
@@ -1932,7 +1898,73 @@
                 <span class="step__ai-role-text"
                   >AI proposes which legal instruments are relevant to each
                   finding. Human reviewers confirm those links before they
-                  appear in the public corpus.</span
+                  appear in the corpus.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="step step--built" data-step="13" data-kind="built">
+        <div class="step__node">13</div>
+        <div class="step__card">
+          <button class="step__header" aria-expanded="false">
+            <div class="step__title-block">
+              <div class="step__meta">
+                <span class="step__tag step__tag--built">Built software</span>
+              </div>
+              <h2 class="step__title">
+                Production-grade hardening for external access
+              </h2>
+              <p class="step__summary">
+                Logins, role-based access, API tokens, rate limiting, monitoring
+                — what's needed before the Alan Turing Institute and other
+                partners can use the system.
+              </p>
+            </div>
+            <span class="step__chev" aria-hidden="true">
+              <svg
+                viewBox="0 0 16 16"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path d="M4 6l4 4 4-4" />
+              </svg>
+            </span>
+          </button>
+          <div class="step__body">
+            <div class="step__body-inner">
+              <div class="step__detail">
+                <p>
+                  Up to here, the database has been an internal CHIRP and Tandem
+                  tool. Once external partners — the Alan Turing Institute data
+                  scientists, partner organisations, future researchers — need
+                  access, the system has to be hardened to production standards.
+                </p>
+                <p>
+                  That means proper authentication (logins, sessions),
+                  role-based access control (CHIRP admins can see and edit
+                  everything; a Turing data scientist gets read access to
+                  specific datasets; a partner sees only what's been agreed),
+                  API tokens scoped to particular use cases, rate limiting,
+                  monitoring and alerting, and a tighter audit trail tied to
+                  authenticated users.
+                </p>
+                <p>
+                  Without this step, neither the analytical frontend nor any
+                  external API access ships safely.
+                </p>
+              </div>
+              <div class="step__ai-role">
+                <span class="step__ai-role-label">Not AI</span>
+                <span class="step__ai-role-text"
+                  >Standard production engineering — the security, identity, and
+                  operational floor any production system needs. None of it
+                  involves AI.</span
                 >
               </div>
             </div>
@@ -2174,8 +2206,8 @@
           <div class="packages__kicker">Delivery</div>
           <h2>How this <span class="accent">breaks down</span>.</h2>
           <p class="packages__lead">
-            The 17 steps cluster into six packages. Each one is scoped, quoted,
-            and delivered as its own piece of work.
+            The 17 steps cluster into seven packages. Each one is scoped,
+            quoted, and delivered as its own piece of work.
           </p>
         </div>
 
@@ -2222,31 +2254,47 @@
           <div class="package">
             <div class="package__row">
               <span class="package__num">P4</span>
-              <span class="package__steps">Steps 11, 12, 13</span>
+              <span class="package__steps">Steps 11, 12</span>
             </div>
-            <div class="package__title">Multi-jurisdiction</div>
+            <div class="package__title">Broader corpus &amp; legislation</div>
             <div class="package__desc">
-              Adding more countries, recognising the same place or organisation
-              across borders, and linking each report to the legislation it
-              touches.
+              More report types and formats plus linking each finding to the
+              relevant legislation.
             </div>
           </div>
 
-          <div class="package">
+          <div class="package package--essential">
             <div class="package__row">
               <span class="package__num">P5</span>
-              <span class="package__steps">Steps 14, 15</span>
+              <span class="package__steps">Step 13</span>
             </div>
-            <div class="package__title">Analytical frontend</div>
+            <div class="package__title">Production hardening</div>
             <div class="package__desc">
-              Maps, timelines, dashboards, and recommendation tracking — the
-              visual surface on top of a verified, multi-jurisdiction corpus.
+              Authentication, role-based access, API tokens, rate limiting, and
+              monitoring — the security and operational floor needed before
+              external partners like the Alan Turing Institute interact with the
+              system.
+            </div>
+            <div class="package__status package__status--essential">
+              Essential
             </div>
           </div>
 
           <div class="package">
             <div class="package__row">
               <span class="package__num">P6</span>
+              <span class="package__steps">Steps 14, 15</span>
+            </div>
+            <div class="package__title">Analytical frontend</div>
+            <div class="package__desc">
+              Maps, timelines, dashboards, and recommendation tracking — the
+              visual surface on top of a verified, hardened corpus.
+            </div>
+          </div>
+
+          <div class="package">
+            <div class="package__row">
+              <span class="package__num">P7</span>
               <span class="package__steps">Steps 16, 17</span>
             </div>
             <div class="package__title">Conversational layer</div>
