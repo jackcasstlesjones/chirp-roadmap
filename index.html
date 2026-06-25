@@ -519,13 +519,16 @@
         letter-spacing: 0.04em;
       }
       .step--mvp .step__card {
-        border-color: var(--border);
+        border-color: var(--navy);
+        border-width: 2px;
       }
       .step--mvp .step__card:hover {
-        border-color: rgba(21, 55, 94, 0.4);
+        border-color: var(--navy);
+        box-shadow: var(--shadow-md);
       }
       .step--mvp.is-open .step__card {
         border-color: var(--navy);
+        box-shadow: var(--shadow-lg);
       }
       .step--mvp.is-open .step__chev {
         background: rgba(21, 55, 94, 0.1);
@@ -558,6 +561,22 @@
         color: var(--text-soft);
         line-height: 1.6;
         margin: 0;
+      }
+
+      .roadmap__section-title {
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: var(--text-mute);
+        margin-bottom: 40px;
+        text-align: center;
+      }
+
+      .roadmap__divider {
+        border: none;
+        border-top: 1px solid var(--border);
+        margin: 8px 0 32px;
       }
 
       .parallel-group {
@@ -1259,9 +1278,7 @@
           >
             <div class="step__title-block">
               <div class="step__meta">
-                <span class="step__tag step__tag--mvp"
-                  >Phase 1 deliverable</span
-                >
+                <span class="step__tag step__tag--ai">AI-powered</span>
               </div>
               <h2 class="step__title">Foundation MVP</h2>
               <p class="step__summary">
@@ -1322,6 +1339,10 @@
           </div>
         </div>
       </article>
+
+      <hr class="roadmap__divider" />
+
+      <h3 class="roadmap__section-title">Post-MVP</h3>
 
       <div class="parallel-group">
         <span class="parallel-group__label">Happen simultaneously</span>
